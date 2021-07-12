@@ -9,25 +9,28 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        BuildUIController();
+        SlotUIController();
     }
 
-    void BuildUIController()
+    void SlotUIController()
     {
         if( BuildUI.activeSelf == false)
         {
             if( Input.GetKeyDown(KeyCode.E) )
             {
+                Time.timeScale = 0;
                 BuildUI.SetActive(true);
-                Debug.Log("asd");
             }
-                
         }
 
         else
         {
             if( Input.GetKeyDown(KeyCode.E) )
+            {
+                Time.timeScale = 0;
                 BuildUI.SetActive(false);
+            }
+                
         }
     }
 }
