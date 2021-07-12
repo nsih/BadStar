@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerInfo : MonoBehaviour
+public class PlayerInfo : MonoBehaviour
 {
-    int atk;
-    int Speed;
-    int slotState;
+    public int atk;
+    public int moveSpeed;
+    public int slotState;
+
+    void Start() 
+    {
+        moveSpeed = 5;
+        slotState = 0;
+    }
 }

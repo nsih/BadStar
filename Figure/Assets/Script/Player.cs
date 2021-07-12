@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject player;
-    public int moveSpeed;
+    GameObject player;
 
-    private void Start()
+    void Start()
     {
-        moveSpeed = 5;
+        player = GameObject.Find("Player");
     }
 
     void FixedUpdate()
@@ -18,22 +17,23 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        
     }
 
     void PlayerMove()
     {
         if (Input.GetKey(KeyCode.W))
-            player.transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
+            player.transform.Translate(Vector2.up * Time.deltaTime * player.GetComponent<PlayerInfo>().moveSpeed);
 
         if (Input.GetKey(KeyCode.A))
-            player.transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
+            player.transform.Translate(Vector2.left * Time.deltaTime * player.GetComponent<PlayerInfo>().moveSpeed);
 
 
         if (Input.GetKey(KeyCode.S))
-            player.transform.Translate(Vector2.down * Time.deltaTime * moveSpeed);
+            player.transform.Translate(Vector2.down * Time.deltaTime * player.GetComponent<PlayerInfo>().moveSpeed);
 
 
         if (Input.GetKey(KeyCode.D))
-            player.transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
+            player.transform.Translate(Vector2.right * Time.deltaTime * player.GetComponent<PlayerInfo>().moveSpeed);
     }
 }
