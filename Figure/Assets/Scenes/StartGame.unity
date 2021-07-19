@@ -783,8 +783,8 @@ GameObject:
   - component: {fileID: 600242627}
   - component: {fileID: 600242626}
   - component: {fileID: 600242625}
-  - component: {fileID: 600242630}
   - component: {fileID: 600242629}
+  - component: {fileID: 600242630}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -940,6 +940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41162c18b17bd2448a661ad7c1127850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atk: 0
+  moveSpeed: 0
+  slotState: 0
 --- !u!1 &754367893
 GameObject:
   m_ObjectHideFlags: 0

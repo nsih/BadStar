@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             if( Input.GetKeyDown(KeyCode.E) )
             {
-                Time.timeScale = 0;
+                Time.timeScale = 1;
                 BuildUI.SetActive(false);
             }
                 
