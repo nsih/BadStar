@@ -12,6 +12,11 @@ public class SlotDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     
     Transform startParant;
 
+
+
+    public int slotInfo;
+
+
     public void OnBeginDrag(PointerEventData eventData) //drag start
     {
         dragedSlot = gameObject;
@@ -36,5 +41,10 @@ public class SlotDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             transform.position = startParant.position;
         }
+    }
+
+    public void SlotApply()
+    {
+
     }
 }

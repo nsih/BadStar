@@ -13,4 +13,9 @@ public class PlayerInfo : MonoBehaviour
         moveSpeed = 5;
         slotState = 0;
     }
+
+    void Update() 
+    {
+        
+    }
 }

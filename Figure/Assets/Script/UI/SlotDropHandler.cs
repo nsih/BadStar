@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
 public class SlotDropHandler : MonoBehaviour,IDropHandler
 {
     GameObject draged;
 
-    public GameObject ability
+    public GameObject item
     {
         get
         {
@@ -22,9 +21,10 @@ public class SlotDropHandler : MonoBehaviour,IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(!ability)
+        if(!item)
         {
             SlotDragHandler.dragedSlot.transform.SetParent(transform);
+            ExecuteEvents.ExecuteHierarchy<ISlotChange> (gameObject,null,(x,y) => x.SlotChange() );
         }
     }
 }
