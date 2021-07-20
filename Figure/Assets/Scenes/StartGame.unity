@@ -940,9 +940,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41162c18b17bd2448a661ad7c1127850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AslotState: 0
+  SslotState: 0
   atk: 0
   moveSpeed: 0
-  slotState: 0
 --- !u!1 &754367893
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +957,7 @@ GameObject:
   - component: {fileID: 754367896}
   - component: {fileID: 754367895}
   m_Layer: 5
-  m_Name: Slot 0
+  m_Name: Aslot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1044,7 +1045,7 @@ GameObject:
   - component: {fileID: 789338764}
   - component: {fileID: 789338763}
   m_Layer: 5
-  m_Name: Slot 1
+  m_Name: Sslot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Meh
+  m_Text: Default
 --- !u!222 &1579410713
 CanvasRenderer:
   m_ObjectHideFlags: 0

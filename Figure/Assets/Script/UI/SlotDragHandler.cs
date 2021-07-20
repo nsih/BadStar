@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class SlotDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject dragedSlot;
-
+    
     Vector2 defaultPosiiton;
     
     Transform startParant;
