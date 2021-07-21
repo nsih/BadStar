@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        
+        //Debug.Log(player.GetComponent<PlayerInfo>().moveSpeed);
     }
 
     void PlayerMove()
