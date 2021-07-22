@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public int AslotState;
-    public int SslotState;
+    public int aSlotState;
+    public int sSlotState;
 
     
     public int atk;
@@ -13,8 +13,8 @@ public class PlayerInfo : MonoBehaviour
 
     void Start() 
     {
-        AslotState = 0;
-        SslotState = 0;
+        aSlotState = 0;
+        sSlotState = 0;
 
         moveSpeed = 5;
     }
@@ -22,10 +22,6 @@ public class PlayerInfo : MonoBehaviour
     void Update() 
     {
         SpecialA(); //Select the func to use as an int
-
-        ///
-        Debug.Log("Attack slotState : "+ AslotState);
-        Debug.Log("Special slotState : "+ SslotState);
     }
 
 
@@ -43,21 +39,26 @@ public class PlayerInfo : MonoBehaviour
     */
 
 
-    public void SpecialA()
+    public void AttackS()   //Attack spell
     {
-        if(SslotState == 0)
+
+    }
+
+    public void SpecialA()  //special Abillity
+    {
+        if(sSlotState == 0)
             InitS();
 
-        else if(SslotState == 1)
+        else if(sSlotState == 1)
             Sslot_Brutal();
 
-        else if(SslotState == 2)
+        else if(sSlotState == 2)
             InitS();
 
-        else if(SslotState == 3)
+        else if(sSlotState == 3)
             InitS();
 
-        else if(SslotState == 4)
+        else if(sSlotState == 4)
             InitS();
     }
 

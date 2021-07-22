@@ -10,21 +10,18 @@ public class SlotInfo : MonoBehaviour, ISlotChange
     [SerializeField] Text slotInfoText;
 
 
-    GameObject Player;
-    GameObject Aslot;
-    GameObject Sslot;
-
-    public int slotInfo0;
-    public int slotInfo1;
+    GameObject player;
+    GameObject aSlot;
+    GameObject sSlot;
 
     void Start()
     {
         SlotChange();
 
 
-        Player = GameObject.Find("Player");
-        Aslot = GameObject.Find("Aslot");
-        Sslot = GameObject.Find("Sslot");
+        player = GameObject.Find("Player");
+        aSlot = GameObject.Find("Aslot");
+        sSlot = GameObject.Find("Sslot");
     }
 
     void Update() 
@@ -53,43 +50,43 @@ public class SlotInfo : MonoBehaviour, ISlotChange
 
     public void AslotInfoUpdate()
     {
-        if(Aslot.transform.childCount == 0)
-            Player.GetComponent<PlayerInfo>().AslotState = 0;
+        if(aSlot.transform.childCount == 0)
+            player.GetComponent<PlayerInfo>().aSlotState = 0;
 
-        else if (Aslot.transform.childCount != 0 )
+        else if (aSlot.transform.childCount != 0 )
         {
-            if( Aslot.transform.GetChild(0).name == "Brutal")
-                Player.GetComponent<PlayerInfo>().AslotState = 1;
+            if( aSlot.transform.GetChild(0).name == "Brutal")
+                player.GetComponent<PlayerInfo>().aSlotState = 1;
 
-            else if(Aslot.transform.GetChild(0).name == "Spark")
-                Player.GetComponent<PlayerInfo>().AslotState = 2;
+            else if(aSlot.transform.GetChild(0).name == "Spark")
+                player.GetComponent<PlayerInfo>().aSlotState = 2;
 
-            else if(Aslot.transform.GetChild(0).name == "Focus")
-                Player.GetComponent<PlayerInfo>().AslotState = 3;
+            else if(aSlot.transform.GetChild(0).name == "Focus")
+                player.GetComponent<PlayerInfo>().aSlotState = 3;
 
-            else if(Aslot.transform.GetChild(0).name == "Distortion")
-                Player.GetComponent<PlayerInfo>().AslotState = 4;
+            else if(aSlot.transform.GetChild(0).name == "Distortion")
+                player.GetComponent<PlayerInfo>().aSlotState = 4;
         }
     }
 
     public void SslotInfoUpdate()
     {
-        if(Sslot.transform.childCount == 0)
-            Player.GetComponent<PlayerInfo>().SslotState = 0;
+        if(sSlot.transform.childCount == 0)
+            player.GetComponent<PlayerInfo>().sSlotState = 0;
 
-        else if(Sslot.transform.childCount != 0)
+        else if(sSlot.transform.childCount != 0)
         {
-            if( Sslot.transform.GetChild(0).name == "Brutal")
-                Player.GetComponent<PlayerInfo>().SslotState = 1;
+            if( sSlot.transform.GetChild(0).name == "Brutal")
+                player.GetComponent<PlayerInfo>().sSlotState = 1;
 
-            else if(Sslot.transform.GetChild(0).name == "Spark")
-                Player.GetComponent<PlayerInfo>().SslotState = 2;
+            else if(sSlot.transform.GetChild(0).name == "Spark")
+                player.GetComponent<PlayerInfo>().sSlotState = 2;
 
-            else if(Sslot.transform.GetChild(0).name == "Focus")
-                Player.GetComponent<PlayerInfo>().SslotState = 3;
+            else if(sSlot.transform.GetChild(0).name == "Focus")
+                player.GetComponent<PlayerInfo>().sSlotState = 3;
 
-            else if(Sslot.transform.GetChild(0).name == "Distortion")
-                Player.GetComponent<PlayerInfo>().SslotState = 4;
+            else if(sSlot.transform.GetChild(0).name == "Distortion")
+                player.GetComponent<PlayerInfo>().sSlotState = 4;
         }
     }
 }

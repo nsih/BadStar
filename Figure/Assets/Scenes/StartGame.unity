@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -625,6 +626,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d05bc25975f1f448a85b620c1995c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -785,6 +798,7 @@ GameObject:
   - component: {fileID: 600242625}
   - component: {fileID: 600242629}
   - component: {fileID: 600242630}
+  - component: {fileID: 600242631}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -940,10 +954,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41162c18b17bd2448a661ad7c1127850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AslotState: 0
-  SslotState: 0
+  aSlotState: 0
+  sSlotState: 0
   atk: 0
   moveSpeed: 0
+--- !u!114 &600242631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600242624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b27b825e1281b4199aaa175e001f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalA: {fileID: 1340204368198376991, guid: 6ec7718ac20c2ae42b1ebdeaad48c579, type: 3}
+  tempSlotState: 0
 --- !u!1 &754367893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,5 +2048,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots: {fileID: 1644429342}
   slotInfoText: {fileID: 1579410712}
-  slotInfo0: 0
-  slotInfo1: 0
