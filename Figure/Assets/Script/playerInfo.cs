@@ -11,6 +11,8 @@ public class PlayerInfo : MonoBehaviour
     public int atk;
     public int moveSpeed;
 
+    public int isCanDialogue;
+
     void Start() 
     {
         aSlotState = 0;
@@ -29,9 +31,6 @@ public class PlayerInfo : MonoBehaviour
     /*
     *   Attacl Slot
     */
-
-
-
 
 
     /*
@@ -70,5 +69,19 @@ public class PlayerInfo : MonoBehaviour
     public void Sslot_Brutal()
     {
         moveSpeed = 10;
+    }
+
+    /////
+
+    void OnTriggerEnter2D (Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Npc")
+            isCanDialogue = 1;
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Npc")
+            isCanDialogue = 0;
     }
 }
