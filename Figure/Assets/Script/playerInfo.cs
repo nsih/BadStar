@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//플레이어 정보
 public class PlayerInfo : MonoBehaviour
 {
+    public GameObject onColliderObject;
+
+
+
     public int aSlotState;
     public int sSlotState;
 
@@ -11,7 +16,8 @@ public class PlayerInfo : MonoBehaviour
     public int atk;
     public int moveSpeed;
 
-    public int isCanDialogue;
+    public bool isCanDialogue;   //대화시작 가능?
+    public bool isDialogue;      //대화중?
 
     void Start() 
     {
@@ -19,6 +25,9 @@ public class PlayerInfo : MonoBehaviour
         sSlotState = 0;
 
         moveSpeed = 5;
+
+        isCanDialogue = false;
+        isDialogue = false;
     }
 
     void Update() 
@@ -73,15 +82,21 @@ public class PlayerInfo : MonoBehaviour
 
     /////
 
-    void OnTriggerEnter2D (Collider2D collider)
+    public void OnTriggerEnter2D (Collider2D collider)
     {
         if(collider.gameObject.tag == "Npc")
-            isCanDialogue = 1;
+            isCanDialogue = true;
+
+
+        onColliderObject = collider.gameObject;
+        collider.transform.GetComponent<InteractionEvent>().GetDialogue();
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Npc")
-            isCanDialogue = 0;
+            isCanDialogue = false;
+
+        onColliderObject = null;
     }
 }

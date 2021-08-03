@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     GameObject player;
-
-    void Start()
+    
+    void Awake()
     {
         player = GameObject.Find("Player");
     }
@@ -36,4 +36,6 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             player.transform.Translate(Vector2.right * Time.deltaTime * player.GetComponent<PlayerInfo>().moveSpeed);
     }
+
+    
 }

@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 467949706}
   - component: {fileID: 467949707}
   - component: {fileID: 467949708}
+  - component: {fileID: 467949709}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -629,7 +630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &467949707
 MonoBehaviour:
@@ -656,6 +657,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   csv_FileName: DialogueData
+--- !u!114 &467949709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467949705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcb4f7d0b619744f8885ce78e50c855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBar: {fileID: 1302726570}
+  dialogueName: 
+  dialogueTxt: {fileID: 1439250616}
+  nameTxt: {fileID: 0}
+  isDialogue: 0
+  isNext: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d05bc25975f1f448a85b620c1995c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 600242624}
+  f_speed: 10
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -981,7 +1002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600242624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0018067909, y: -0.049302354, z: -2.9746094}
+  m_LocalPosition: {x: 0, y: 0, z: -2.9746094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1011,11 +1032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41162c18b17bd2448a661ad7c1127850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onColliderObject: {fileID: 0}
   aSlotState: 0
   sSlotState: 0
   atk: 0
   moveSpeed: 0
   isCanDialogue: 0
+  isDialogue: 0
 --- !u!114 &600242631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,7 +1348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6cc856d8712f4428feca60c74afe5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildUI: {fileID: 1998297452}
+  buildUI: {fileID: 1998297452}
+  dialogueBar: {fileID: 1302726570}
 --- !u!212 &1266753163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1389,7 +1413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302726570
 GameObject:
@@ -1402,13 +1426,15 @@ GameObject:
   - component: {fileID: 1302726571}
   - component: {fileID: 1302726573}
   - component: {fileID: 1302726572}
+  - component: {fileID: 1302726574}
+  - component: {fileID: 1302726575}
   m_Layer: 5
-  m_Name: DialogueWindow
+  m_Name: DialogueBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1302726571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1426,7 +1452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 346, y: 117}
+  m_AnchoredPosition: {x: 176, y: 117}
   m_SizeDelta: {x: 258.87, y: 133.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302726572
@@ -1442,7 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1467,6 +1493,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302726570}
   m_CullTransparentMesh: 1
+--- !u!114 &1302726574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302726570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19001d0071189874e89ca7286bbb5149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1302726575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302726570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19001d0071189874e89ca7286bbb5149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1342209100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1699,7 @@ RectTransform:
   m_Children:
   - {fileID: 1998297453}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1668,7 +1718,7 @@ GameObject:
   - component: {fileID: 1439250617}
   - component: {fileID: 1439250616}
   m_Layer: 5
-  m_Name: Text
+  m_Name: DialogueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1706,7 +1756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1907,7 +1957,7 @@ RectTransform:
   m_Children:
   - {fileID: 1302726571}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2117,6 +2167,7 @@ GameObject:
   - component: {fileID: 1714921116}
   - component: {fileID: 1714921115}
   - component: {fileID: 1714921114}
+  - component: {fileID: 1714921118}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Npc
@@ -2226,6 +2277,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714921118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714921113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fd2d443e536e14d81ddbca94104904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Test
+    line: {x: 1, y: 3}
+    dialogues:
+    - name: 
+      contexts: []
+    - name: 
+      contexts: []
+    - name: 
+      contexts: []
 --- !u!1 &1974108343
 GameObject:
   m_ObjectHideFlags: 0
