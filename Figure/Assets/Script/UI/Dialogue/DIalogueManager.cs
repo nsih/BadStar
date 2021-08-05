@@ -7,7 +7,9 @@ using UnityEngine.UI;
 //대화 ui를 관리하는 매니저
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] GameObject dialogueBar;
+
+    [SerializeField] public GameObject dialogueCanvas;
+    //[SerializeField] GameObject dialogueBar;
     [SerializeField] public string dialogueName;
     [SerializeField] Text dialogueTxt;
     public Text nameTxt;
@@ -54,7 +56,7 @@ public class DialogueManager : MonoBehaviour
 
     void SettingUI(bool p_flag)
     {
-        dialogueBar.SetActive(p_flag);
+        dialogueCanvas.SetActive(p_flag);
     }
 
     public void NextLint()

@@ -12,7 +12,7 @@ public class BarPosition : MonoBehaviour
     Vector2 playerBarPos;
     Vector2 npcBarPos;
 
-    void Awake() 
+    void Start() 
     {
         player  = GameObject.Find("Player");
         dialogueManager = GameObject.Find("DialogueManager");
@@ -21,6 +21,7 @@ public class BarPosition : MonoBehaviour
     }
     void Update() 
     {
+        UiPosSet();
         BarMovement();
     }
 
@@ -46,8 +47,8 @@ public class BarPosition : MonoBehaviour
             //this.GetComponent<RectTransform>().anchoredPosition = npcBarPos;
         }
 
-        Debug.Log(playerBarPos);
-        Debug.Log(npcBarPos);
+        //Debug.Log(playerBarPos);
+        //Debug.Log(npcBarPos);
     }
 
 

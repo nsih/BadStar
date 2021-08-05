@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject buildUI;
-    public GameObject dialogueBar;
+    public GameObject slotCanvas;
+    public GameObject dialogueCanvas;
 
     GameObject dialogueManager;
     GameObject player;
@@ -20,30 +20,30 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        if(dialogueBar.activeSelf == false)
+        if(dialogueCanvas.activeSelf == false)
             SlotUIController();
 
-        if(buildUI.activeSelf == false)
+        if(slotCanvas.activeSelf == false)
             InteractionUIController();
     }
 
     void SlotUIController() //슬롯을 바꾸기 위해
     {
-        if( buildUI.activeSelf == false)
+        if( slotCanvas.activeSelf == false)
         {
             if( Input.GetKeyDown(KeyCode.Space) )
             {
                 Time.timeScale = 0;
-                buildUI.SetActive(true);
+                slotCanvas.SetActive(true);
             }
         }
 
-        else if (buildUI.activeSelf == true)
+        else if (slotCanvas.activeSelf == true)
         {
             if( Input.GetKeyDown(KeyCode.Space) )
             {
                 Time.timeScale = 1;
-                buildUI.SetActive(false);
+                slotCanvas.SetActive(false);
             }
                 
         }
@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(dialogueBar.activeSelf == false && player.GetComponent<PlayerInfo>().isCanDialogue == true)
+            if(dialogueCanvas.activeSelf == false && player.GetComponent<PlayerInfo>().isCanDialogue == true)
             {
                 //Debug.Log("켬");
 
@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
                 onColliderObject.GetComponent<InteractionEvent>().GetDialogue() );
             }
 
-            else if(dialogueBar.activeSelf == true)
+            else if(dialogueCanvas.activeSelf == true)
             {
                 dialogueManager.GetComponent<DialogueManager>().NextLint();
             }
