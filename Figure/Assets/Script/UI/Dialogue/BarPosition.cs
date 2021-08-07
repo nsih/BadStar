@@ -28,10 +28,10 @@ public class BarPosition : MonoBehaviour
     void UiPosSet()
     {
         playerBarPos = player.transform.position;
-        playerBarPos.y = playerBarPos.y + 2.0f;
+        playerBarPos.y = playerBarPos.y + 1.5f;
         
         npcBarPos = player.GetComponent<PlayerInfo>().onColliderObject.transform.position;
-        npcBarPos.y = npcBarPos.y + 2.0f;
+        npcBarPos.y = npcBarPos.y + 1.5f;
     }
 
     void BarMovement()
