@@ -7,14 +7,18 @@ public class PlayerInfo : MonoBehaviour
 {
     public GameObject onColliderObject;
 
-
-
     public int aSlotState;
     public int sSlotState;
 
     
     public int atk;
     public int moveSpeed;
+
+
+
+    public float CGauge; 
+    //Casimir Effect? //게이지는 적을 공격하거나 적 공격을 스칠때 채워진다
+
 
     public bool isCanDialogue;   //대화시작 가능?
     public bool isDialogue;      //대화중?
@@ -85,18 +89,24 @@ public class PlayerInfo : MonoBehaviour
     public void OnTriggerEnter2D (Collider2D collider)
     {
         if(collider.gameObject.tag == "Npc")
+        {
             isCanDialogue = true;
-
-
-        onColliderObject = collider.gameObject;
-        collider.transform.GetComponent<InteractionEvent>().GetDialogue();
+            
+            onColliderObject = collider.gameObject;
+            collider.transform.GetComponent<InteractionEvent>().GetDialogue();
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Npc")
+        {
             isCanDialogue = false;
+        }
 
-        onColliderObject = null;
+        else
+        {
+            onColliderObject = null;
+        }
     }
 }
