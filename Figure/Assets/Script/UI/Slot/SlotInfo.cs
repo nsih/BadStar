@@ -1,3 +1,5 @@
+//슬롯 오브젝트 자식을 보고 플레이어의 상태 변경.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,8 +22,8 @@ public class SlotInfo : MonoBehaviour, ISlotChange
 
 
         player = GameObject.Find("Player");
-        aSlot = GameObject.Find("Aslot");
-        sSlot = GameObject.Find("Sslot");
+        aSlot = GameObject.Find("UiRoot").transform.Find("SlotCanvas").transform.Find("Panel").transform.Find("MainPanel").transform.Find("Aslot").gameObject;
+        sSlot = GameObject.Find("UiRoot").transform.Find("SlotCanvas").transform.Find("Panel").transform.Find("MainPanel").transform.Find("Sslot").gameObject;
     }
 
     void Update() 
@@ -43,7 +45,7 @@ public class SlotInfo : MonoBehaviour, ISlotChange
                 builder.Append (" - ");
             }
         }
-        slotInfoText.text = builder.ToString();
+        slotInfoText.text = builder.ToString(); //디버깅용
     }
 
 
