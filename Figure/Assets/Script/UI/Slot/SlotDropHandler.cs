@@ -24,7 +24,6 @@ public class SlotDropHandler : MonoBehaviour,IDropHandler
         if(!item)
         {
             SlotDragHandler.dragedSlot.transform.SetParent(transform);
-            ExecuteEvents.ExecuteHierarchy<ISlotChange> (gameObject,null,(x,y) => x.SlotChange() );
         }
     }
 }

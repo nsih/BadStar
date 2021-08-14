@@ -6,10 +6,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SlotInfo : MonoBehaviour, ISlotChange
+public class SlotInfo : MonoBehaviour
 {
     [SerializeField] Transform slots;
-    [SerializeField] Text slotInfoText;
 
 
     GameObject player;
@@ -18,9 +17,6 @@ public class SlotInfo : MonoBehaviour, ISlotChange
 
     void Start()
     {
-        SlotChange();
-
-
         player = GameObject.Find("Player");
         aSlot = GameObject.Find("UiRoot").transform.Find("SlotCanvas").transform.Find("Panel").transform.Find("MainPanel").transform.Find("Aslot").gameObject;
         sSlot = GameObject.Find("UiRoot").transform.Find("SlotCanvas").transform.Find("Panel").transform.Find("MainPanel").transform.Find("Sslot").gameObject;
@@ -30,22 +26,6 @@ public class SlotInfo : MonoBehaviour, ISlotChange
     {
         AslotInfoUpdate();
         SslotInfoUpdate();  //slotInfo를 playerInfo로
-    }
-
-    public void SlotChange()
-    {
-        System.Text.StringBuilder builder = new System.Text.StringBuilder();
-        builder.Append (" - ");
-        foreach (Transform slotTransform in slots)
-        {
-            GameObject item = slotTransform.GetComponent<SlotDropHandler>().item;
-            if(item)
-            {
-                builder.Append (item.name);
-                builder.Append (" - ");
-            }
-        }
-        slotInfoText.text = builder.ToString(); //디버깅용
     }
 
 

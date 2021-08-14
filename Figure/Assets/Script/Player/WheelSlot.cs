@@ -1,5 +1,4 @@
-//휠을 돌리면 Aslot자식과 subslot 자식을 순서대로 바꿔줌.
-//비어있으면 비어있는 상태가 바뀜.
+//휠을 돌리면 Aslot을 비어있는 상태를 포함해 있는 슬롯의 순서대로 바꿔줌.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +8,6 @@ using UnityEngine.EventSystems;
 public class WheelSlot : MonoBehaviour
 {    
     public GameObject aSlot;
-    GameObject tempSlot;
 
     public GameObject subSlot0;
     public GameObject subSlot1;
@@ -19,15 +17,11 @@ public class WheelSlot : MonoBehaviour
 
     bool upWheel;
 
-
     RectTransform aSlotTransform;
-
-    
     RectTransform transform0;
     RectTransform transform1;
     RectTransform transform2;
     RectTransform transform3;
-
 
     int tempSlotNo = 0;
 
@@ -40,6 +34,7 @@ public class WheelSlot : MonoBehaviour
         transform1 = subSlot1.GetComponent<RectTransform>();
         transform2 = subSlot2.GetComponent<RectTransform>();
         transform3 = subSlot3.GetComponent<RectTransform>();
+
 
 
         //Debug.Log(aSlot.GetComponent<RectTransform>().position);
@@ -91,7 +86,7 @@ public class WheelSlot : MonoBehaviour
         }
     }
 
-    void EmptySlotNoControll()  //중간에 비어있을때는?
+    void EmptySlotNoControll()  //중간에 비어있을때는
     {
         if(upWheel == true) //위로
         {
@@ -122,14 +117,12 @@ public class WheelSlot : MonoBehaviour
         }
     }
 
-
-    void ChangeChip()  
+    void ChangeChip()  //insert + return
     {
         if(aSlot.transform.childCount == 0)
         {
             InsertChip();
         }
-
 
         else
         {
@@ -138,7 +131,7 @@ public class WheelSlot : MonoBehaviour
         }
 
     }
-
+    
     void InsertChip() //휠 숫자보고 바꿀칩을 고름 aslot에 뭐가 있었으면 참조해야할거 바뀜
     {
         if(aSlot.transform.childCount == 0)
@@ -269,7 +262,7 @@ public class WheelSlot : MonoBehaviour
 
         
     }
-
+    
     void ReturnChip()    //aslot 에 있는걸 칩이름 보고 되돌림 
     {
         if (aSlot.transform.childCount != 0)

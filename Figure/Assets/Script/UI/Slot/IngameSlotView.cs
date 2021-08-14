@@ -14,26 +14,35 @@ public class IngameSlotView : MonoBehaviour
     public GameObject sSlot;
 
 
-    Image slotImage0;
-    Image slotImage1;
-
     void Update()
     {
-        
+        CopyAslotImage();
+        CopySslotImage();
     }
 
-    void CopySlotImage()
+    void CopyAslotImage()
     {
         if(aSlot.transform.childCount == 0)
         {
-            
+            slot0.GetComponent<Image>().sprite = null;
         }
 
         else
         {
-            
+            slot0.GetComponent<Image>().sprite = aSlot.transform.GetChild(0).GetComponent<Image>().sprite;
         }
     }
 
-    
+    void CopySslotImage()
+    {
+        if(sSlot.transform.childCount == 0)
+        {
+            slot1.GetComponent<Image>().sprite = null;
+        }
+
+        else
+        {
+            slot1.GetComponent<Image>().sprite = sSlot.transform.GetChild(0).GetComponent<Image>().sprite;
+        }
+    }
 }
