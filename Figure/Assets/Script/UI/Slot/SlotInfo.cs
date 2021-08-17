@@ -54,21 +54,21 @@ public class SlotInfo : MonoBehaviour
     public void SslotInfoUpdate()
     {
         if(sSlot.transform.childCount == 0)
-            player.GetComponent<PlayerInfo>().sSlotState = 0;
+            player.GetComponent<PlayerInfo>().rSlotState = 0;
 
         else if(sSlot.transform.childCount != 0)
         {
             if( sSlot.transform.GetChild(0).name == "Brutal")
-                player.GetComponent<PlayerInfo>().sSlotState = 1;
+                player.GetComponent<PlayerInfo>().rSlotState = 1;
 
             else if(sSlot.transform.GetChild(0).name == "Spark")
-                player.GetComponent<PlayerInfo>().sSlotState = 2;
+                player.GetComponent<PlayerInfo>().rSlotState = 2;
 
             else if(sSlot.transform.GetChild(0).name == "Focus")
-                player.GetComponent<PlayerInfo>().sSlotState = 3;
+                player.GetComponent<PlayerInfo>().rSlotState = 3;
 
             else if(sSlot.transform.GetChild(0).name == "Distortion")
-                player.GetComponent<PlayerInfo>().sSlotState = 4;
+                player.GetComponent<PlayerInfo>().rSlotState = 4;
         }
     }
 }

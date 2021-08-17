@@ -8,7 +8,7 @@ public class PlayerInfo : MonoBehaviour
     public GameObject onColliderObject;
 
     public int aSlotState;
-    public int sSlotState;
+    public int rSlotState;
 
     
     public int atk;
@@ -16,8 +16,7 @@ public class PlayerInfo : MonoBehaviour
 
 
 
-    public float CGauge; 
-    //Casimir Effect? //게이지는 적을 공격하거나 적 공격을 스칠때 채워진다
+    public float Gauge; 
 
 
     public bool isCanDialogue;   //대화시작 가능?
@@ -25,8 +24,10 @@ public class PlayerInfo : MonoBehaviour
 
     void Start() 
     {
+        Gauge = 100;
+
         aSlotState = 0;
-        sSlotState = 0;
+        rSlotState = 0;
 
         moveSpeed = 5;
 
@@ -36,7 +37,7 @@ public class PlayerInfo : MonoBehaviour
 
     void Update() 
     {
-        SpecialA(); //Select the func to use as an int
+        RepulserSlot(); //Select the func to use as an int
     }
 
 
@@ -49,42 +50,54 @@ public class PlayerInfo : MonoBehaviour
     /*
     *   Special Slot
     */
-
-
-    public void AttackS()   //Attack spell
+    public void AttackSlot()   //Attack spell
     {
 
     }
 
-    public void SpecialA()  //special Abillity
+    public void RepulserSlot()  //special Abillity
     {
-        if(sSlotState == 0)
-            InitS();
+        if(rSlotState == 0)
+            Default_R();
 
-        else if(sSlotState == 1)
-            Sslot_Brutal();
+        else if(rSlotState == 1)
+            Brutal_R();
 
-        else if(sSlotState == 2)
-            InitS();
+        else if(rSlotState == 2)
+            Default_R();
 
-        else if(sSlotState == 3)
-            InitS();
+        else if(rSlotState == 3)
+            Default_R();
 
-        else if(sSlotState == 4)
-            InitS();
+        else if(rSlotState == 4)
+            Default_R();
     }
 
-    public void InitS()
+    public void Default_R()
     {
         moveSpeed = 5;
     }
 
-    public void Sslot_Brutal()
+    public void Brutal_R()
     {
         moveSpeed = 10;
     }
 
-    /////
+
+    /*
+    *척력장치 기동중
+    */
+
+    void RepulserM()
+    {
+
+    }
+
+
+
+    /*
+    *   대화-충돌처리
+    */
 
     public void OnTriggerEnter2D (Collider2D collider)
     {

@@ -37,16 +37,5 @@ public class Player : MonoBehaviour
             player.transform.Translate(Vector2.right * Time.deltaTime * player.GetComponent<PlayerInfo>().moveSpeed);
     }
 
-
-    void Repulser() 
-    {
-        if( this.gameObject.GetComponent<PlayerInfo>().CGauge > 10 )
-        {
-            //척력그거 켜는거야.. 척력 그거는 다른 오브젝트인데 붙어있는거야..
-
-            this.gameObject.GetComponent<PlayerInfo>().CGauge = this.gameObject.GetComponent<PlayerInfo>().CGauge - 0.01f;
-        }
-    }
-
     
 }
