@@ -1243,6 +1243,7 @@ MonoBehaviour:
   Gauge: 0
   isCanDialogue: 0
   isDialogue: 0
+  isSlotChangable: 0
 --- !u!114 &600242631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,7 +2370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1418953983
 MonoBehaviour:
   m_ObjectHideFlags: 0

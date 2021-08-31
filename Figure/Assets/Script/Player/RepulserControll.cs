@@ -6,56 +6,34 @@ public class RepulserControll : MonoBehaviour
 {
     public GameObject repulser;
 
-    float inputTime = 0f;
-    float delayTime;
 
-
-    bool isRepulser;
-
-    void Start() 
-    {
-        delayTime = 0.5f;
-    }
     void Update()
     {
-        GetInput();
-        Controller(isRepulser);
+        Activate();
+        Exac();
     }
 
-    void GetInput()
+    void Activate()
     {
-        if(Input.GetKey(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             if(this.GetComponent<PlayerInfo>().Gauge > 10)
             {
-                inputTime += Time.deltaTime;
+                repulser.SetActive(true);
+            }
+
+            else
+            {
+                //적절한 제스쳐
             }
         }
-
-        if (Input.GetKeyUp(KeyCode.Q) || this.GetComponent<PlayerInfo>().Gauge <= 0)
-        {
-            inputTime = 0;
-            isRepulser = false;
-        }
-
-        if(inputTime >= delayTime)
-        {
-            isRepulser = true;
-        }
     }
 
-    void GetDelaytime()
+    void Exac()
     {
-
-    }
-
-    void Controller(bool flag)
-    {
-        if(isRepulser == flag)  
+        if(Input.GetKeyUp(KeyCode.Q) || this.GetComponent<PlayerInfo>().Gauge <= 0)
         {
-            repulser.SetActive(flag);
+            repulser.SetActive(false);
         }
-
-        Debug.Log(flag);
     }
 }

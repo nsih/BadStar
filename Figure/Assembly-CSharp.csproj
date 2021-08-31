@@ -38,25 +38,25 @@
   <ItemGroup>
      <Compile Include="Assets\Script\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\InteractionEvent.cs" />
-     <Compile Include="Assets\Script\Player.cs" />
+     <Compile Include="Assets\Script\Player\Player.cs" />
+     <Compile Include="Assets\Script\Player\RepulserControll.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\DialogueManager.cs" />
-     <Compile Include="Assets\Script\PlayerInfo.cs" />
-     <Compile Include="Assets\Script\UIManager.cs" />
+     <Compile Include="Assets\Script\Player\PlayerInfo.cs" />
+     <Compile Include="Assets\Script\UI\UIManager.cs" />
      <Compile Include="Assets\Script\UI\Slot\SlotInfo.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Script\Main\MainMenu.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\DialogueDataManager.cs" />
-     <Compile Include="Assets\Script\Player\WheelSlot.cs" />
+     <Compile Include="Assets\Script\Player\Repulser\WheelSlot.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\BarPosition.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\DialogueParser.cs" />
      <Compile Include="Assets\Script\UI\Slot\SlotDragHandler.cs" />
      <Compile Include="Assets\Script\UI\Slot\InitUiTransform.cs" />
      <Compile Include="Assets\Script\CameraInfo.cs" />
-     <Compile Include="Assets\Script\Player\RepulserControll.cs" />
-     <Compile Include="Assets\Script\Player\Repulser.cs" />
+     <Compile Include="Assets\Script\Player\Repulser\RepulserControll.cs" />
+     <Compile Include="Assets\Script\Player\Repulser\Repulser.cs" />
      <Compile Include="Assets\Script\UI\Slot\SlotDropHandler.cs" />
      <Compile Include="Assets\Script\UI\Slot\IngameSlotView.cs" />
-     <Compile Include="Assets\Script\UI\RepulserGuage\GuageController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

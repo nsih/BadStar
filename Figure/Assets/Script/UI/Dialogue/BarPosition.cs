@@ -41,14 +41,6 @@ public class BarPosition : MonoBehaviour
             this.transform.position = playerBarPos;
             //this.GetComponent<RectTransform>().anchoredPosition = playerBarPos;
         }
-
-        else if(dialogueManager.GetComponent<DialogueManager>().dialogueName == "simon")
-        {
-            //포지션 정하고
-            //this.transform.position = ??
-            //바에 띄울 선택지의 새로운 함수를 불러온다?..
-        }
-
         else
         {
             this.transform.position = npcBarPos;
