@@ -56,6 +56,8 @@
      <Compile Include="Assets\Script\Player\Repulser\Repulser.cs" />
      <Compile Include="Assets\Script\UI\Slot\SlotDropHandler.cs" />
      <Compile Include="Assets\Script\UI\Slot\IngameSlotView.cs" />
+     <Compile Include="Assets\Script\Player\slotfunc\SecondaryFunc.cs" />
+     <Compile Include="Assets\Script\Player\AimMuzzle.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

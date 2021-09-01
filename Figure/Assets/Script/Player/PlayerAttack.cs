@@ -20,7 +20,7 @@ public class PlayerAttack: MonoBehaviour
     {
         player = GameObject.Find("Player");
 
-        tempSlotState = player.GetComponent<PlayerInfo>().aSlotState;
+        tempSlotState = player.GetComponent<PlayerInfo>().sup_SlotState;
 
         InitPool();
     }
@@ -34,9 +34,9 @@ public class PlayerAttack: MonoBehaviour
 
     public void CheckSlotChange()
     {
-        if(tempSlotState != player.GetComponent<PlayerInfo>().aSlotState)
+        if(tempSlotState != player.GetComponent<PlayerInfo>().sup_SlotState)
         {
-            tempSlotState = player.GetComponent<PlayerInfo>().aSlotState;
+            tempSlotState = player.GetComponent<PlayerInfo>().sup_SlotState;
             /*
             Debug.Log("aSlotState : " + player.GetComponent<PlayerInfo>().aSlotState);
             Debug.Log("tempSlotState : " + tempSlotState);
@@ -50,7 +50,7 @@ public class PlayerAttack: MonoBehaviour
     {
         for(int i = 0; i < 30; i++)
         {
-            if(player.GetComponent<PlayerInfo>().aSlotState == 0)
+            if(player.GetComponent<PlayerInfo>().sup_SlotState == 0)
             {
                 GameObject temp = Instantiate(normalA as GameObject);
                 temp.gameObject.SetActive(false);

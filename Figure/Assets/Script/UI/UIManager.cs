@@ -22,7 +22,10 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            InteractionUIController();
+        }
     }
 
 

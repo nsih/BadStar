@@ -7,14 +7,11 @@ public class PlayerInfo : MonoBehaviour
 {
     public GameObject onColliderObject;
 
-    public int aSlotState;
-    public int rSlotState;
-
+    public int sup_SlotState;   //main
+    public int sec_SlotState;   //sub
     
     public int atk;
     public int moveSpeed;
-
-
 
     public float Gauge; 
 
@@ -22,14 +19,14 @@ public class PlayerInfo : MonoBehaviour
     public bool isCanDialogue;   //대화시작 가능?
     public bool isDialogue;      //대화중?
 
-    public bool isSlotChangable; //
+    public bool isSlotChangable; //교체장소 접속
 
     void Start() 
     {
         Gauge = 100;
 
-        aSlotState = 0;
-        rSlotState = 0;
+        sup_SlotState = 0;
+        sec_SlotState = 0;
 
         moveSpeed = 5;
 
@@ -37,68 +34,16 @@ public class PlayerInfo : MonoBehaviour
         isDialogue = false;
     }
 
-    void Update() 
+    public void SupremeSlot()   //Attack
     {
-        RepulserSlot(); //Select the func to use as an int
+        
     }
+
 
 
 
     /*
-    *   Attacl Slot
-    */
-
-
-    /*
-    *   Special Slot
-    */
-    public void AttackSlot()   //Attack spell
-    {
-
-    }
-
-    public void RepulserSlot()  //special Abillity
-    {
-        if(rSlotState == 0)
-            Default_R();
-
-        else if(rSlotState == 1)
-            Brutal_R();
-
-        else if(rSlotState == 2)
-            Default_R();
-
-        else if(rSlotState == 3)
-            Default_R();
-
-        else if(rSlotState == 4)
-            Default_R();
-    }
-
-    public void Default_R()
-    {
-        moveSpeed = 5;
-    }
-
-    public void Brutal_R()
-    {
-        moveSpeed = 10;
-    }
-
-
-    /*
-    *척력장치 기동중
-    */
-
-    void RepulserM()
-    {
-
-    }
-
-
-
-    /*
-    *   대화-충돌처리
+    *   상호작용 ui
     */
 
     public void OnTriggerEnter2D (Collider2D collider)
@@ -111,12 +56,10 @@ public class PlayerInfo : MonoBehaviour
             collider.transform.GetComponent<InteractionEvent>().GetDialogue();
         }
 
-    /*
-        if(collider.gameobject.tag == "")
+        if(collider.gameObject.tag == "ReplacePlace")
         {
             isSlotChangable = true;
         }
-        */
     }
 
     void OnTriggerExit2D(Collider2D collider)
@@ -124,6 +67,11 @@ public class PlayerInfo : MonoBehaviour
         if(collider.gameObject.tag == "Npc")
         {
             isCanDialogue = false;
+        }
+
+        if(collider.gameObject.tag == "ReplacePlace")
+        {
+            isSlotChangable = false;
         }
 
         else
