@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
     public GameObject slotCanvas;
     public GameObject dialogueCanvas;
 
+
     GameObject dialogueManager;
     GameObject player;
+    
 
 
     void Awake() 
@@ -20,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
 
