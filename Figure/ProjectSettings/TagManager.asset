@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Npc
   - ReplacePlace
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

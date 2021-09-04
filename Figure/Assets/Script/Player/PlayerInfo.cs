@@ -18,7 +18,7 @@ public class PlayerInfo : MonoBehaviour
 
     public bool isCanDialogue;   //대화시작 가능?
     public bool isDialogue;      //대화중?
-
+    
     public bool isSlotChangable; //교체장소 접속
 
     void Start() 

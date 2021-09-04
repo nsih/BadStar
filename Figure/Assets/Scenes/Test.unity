@@ -2472,6 +2472,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3598198735688418857, guid: 17d08dc895b2b8f468024d7f22af0328,
+        type: 3}
+      propertyPath: m_Name
+      value: RrotatingBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598198736938164201, guid: 17d08dc895b2b8f468024d7f22af0328,
+        type: 3}
+      propertyPath: normalA
+      value: 
+      objectReference: {fileID: 4990428332939573185, guid: 6ec7718ac20c2ae42b1ebdeaad48c579,
+        type: 3}
     - target: {fileID: 3598198736938164202, guid: 17d08dc895b2b8f468024d7f22af0328,
         type: 3}
       propertyPath: m_RootOrder

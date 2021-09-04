@@ -6,8 +6,10 @@ public class PlayerAttack: MonoBehaviour
 {
     List<GameObject> items = new List<GameObject>();
 
-
+    GameObject playerManager;
     GameObject player;
+    GameObject muzzle;
+    GameObject bulletRotation;
     
     public GameObject normalA;
     //public GameObject 
@@ -18,7 +20,10 @@ public class PlayerAttack: MonoBehaviour
 
     void Start()
     {
+        playerManager = GameObject.Find("PlayerManager");
         player = GameObject.Find("Player");
+        muzzle = GameObject.Find("Muzzle");
+        bulletRotation = GameObject.Find("RrotatingBody");
 
         tempSlotState = player.GetComponent<PlayerInfo>().sup_SlotState;
 
@@ -29,6 +34,11 @@ public class PlayerAttack: MonoBehaviour
     void Update()
     {
         CheckSlotChange();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ActivateProjectile();
+        }
     }
 
 
@@ -37,10 +47,12 @@ public class PlayerAttack: MonoBehaviour
         if(tempSlotState != player.GetComponent<PlayerInfo>().sup_SlotState)
         {
             tempSlotState = player.GetComponent<PlayerInfo>().sup_SlotState;
-            /*
-            Debug.Log("aSlotState : " + player.GetComponent<PlayerInfo>().aSlotState);
+
+
+            Debug.Log("aSlotState : " + player.GetComponent<PlayerInfo>().sup_SlotState);
             Debug.Log("tempSlotState : " + tempSlotState);
-            */
+
+
             DisposePool();
             InitPool();
         }
@@ -56,7 +68,9 @@ public class PlayerAttack: MonoBehaviour
                 temp.gameObject.SetActive(false);
 
                 items.Add(temp);
-                items[i].transform.SetParent(this.transform);
+                items[i].transform.SetParent(playerManager.transform);
+
+
             }
 
             else
@@ -84,8 +98,9 @@ public class PlayerAttack: MonoBehaviour
 
             else if (items[i].activeSelf == false )
             {
-                items[i].transform.position = player.transform.position;
-                items[i].SetActive(true);
+                items[i].transform.position = muzzle.transform.position;
+                items[i].transform.rotation = bulletRotation.transform.rotation;
+                items[i].SetActive(true);     
 
                 break;
             }
