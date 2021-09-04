@@ -13,7 +13,7 @@ public class PlayerInfo : MonoBehaviour
     public int atk;
     public int moveSpeed;
 
-    public float Gauge; 
+    public float Gauge;
 
 
     public bool isCanDialogue;   //대화시작 가능?

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//기본 공격 탄환
 public class BasicAttack : MonoBehaviour
 {
+    float speed;
     float time;
 
     void OnEnable()
@@ -11,9 +12,19 @@ public class BasicAttack : MonoBehaviour
         time = 0;
     }
 
+    void Start() 
+    {
+        speed = 20;
+    }
+
     void Update()
     {
         OffTimer();
+    }
+
+    void FixedUpdate() 
+    {
+        Movement();
     }
 
     void OffTimer() 
@@ -26,10 +37,13 @@ public class BasicAttack : MonoBehaviour
         }
     }
 
-    void Movement() 
+    void Movement()
     {
-        //this.transform.Translate(new Vector2.up);
+        this.transform.Translate(Vector2.up * speed * Time.deltaTime); ;
+    }
 
-        //new Vector2 as;
+    private void Hit() //적한테 맞으면 호출할거임..
+    {
+        this.gameObject.SetActive(false);
     }
 }

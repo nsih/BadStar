@@ -7,6 +7,7 @@ TagManager:
   - Npc
   - ReplacePlace
   - PlayerAttack
+  - Enemy
   layers:
   - Default
   - TransparentFX
