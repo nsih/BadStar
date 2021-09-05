@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CameraInfo : MonoBehaviour
 {
+    /*
     static private CameraInfo instance;
-
+    */
     public GameObject Player;
 
     public int f_speed; //카메라가 따라가는 속도
@@ -14,7 +15,7 @@ public class CameraInfo : MonoBehaviour
     void Awake()
     {
         Screen.SetResolution(1920, 1280, true);
-
+        /*
         if (instance != null)
         {
             Destroy(this.gameObject);
@@ -25,6 +26,7 @@ public class CameraInfo : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
+        */
     }
 
     void FixedUpdate()

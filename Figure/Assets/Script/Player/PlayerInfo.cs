@@ -5,7 +5,24 @@ using UnityEngine;
 //플레이어 정보
 public class PlayerInfo : MonoBehaviour
 {
-    public GameObject onColliderObject;
+    public static PlayerInfo playerInfo = null;
+
+
+    void Awake() 
+    {
+        if(playerInfo == null) //인스턴스가 씬에 없으면
+        {
+            playerInfo = this;  //자신을 instance로 넣는다.
+            DontDestroyOnLoad(gameObject);  //onload에서 삭제하지 않는다.
+        }
+        
+        else
+        {
+            if(playerInfo != this)  //이미 하나 존재하면
+                Destroy(this.gameObject); //awake된 자신을 삭제
+        }
+    }
+
 
     public int sup_SlotState;   //main
     public int sec_SlotState;   //sub
@@ -34,17 +51,16 @@ public class PlayerInfo : MonoBehaviour
         isDialogue = false;
     }
 
-    public void SupremeSlot()   //Attack
-    {
-        
-    }
 
 
-
-
+    
     /*
     *   상호작용 ui
     */
+    /*
+
+    public GameObject onColliderObject;
+
 
     public void OnTriggerEnter2D (Collider2D collider)
     {
@@ -79,4 +95,5 @@ public class PlayerInfo : MonoBehaviour
             onColliderObject = null;
         }
     }
+    */
 }

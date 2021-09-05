@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class EnemyInfo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int hp;
 
-    // Update is called once per frame
-    void Update()
+    public void asdf(int a)
     {
-        
+
     }
 }

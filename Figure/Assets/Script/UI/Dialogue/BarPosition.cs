@@ -30,7 +30,7 @@ public class BarPosition : MonoBehaviour
         playerBarPos = player.transform.position;
         playerBarPos.y = playerBarPos.y + 1.5f;
         
-        npcBarPos = player.GetComponent<PlayerInfo>().onColliderObject.transform.position;
+        npcBarPos = player.GetComponent<PlayerInteraction>().onColliderObject.transform.position;
         npcBarPos.y = npcBarPos.y + 1.5f;
     }
 

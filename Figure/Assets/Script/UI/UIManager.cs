@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0;
 
             dialogueManager.GetComponent<DialogueManager>().
-            ShowDialogue(player.GetComponent<PlayerInfo>().
+            ShowDialogue(player.GetComponent<PlayerInteraction>().
             onColliderObject.GetComponent<InteractionEvent>().GetDialogue() );
         }
 

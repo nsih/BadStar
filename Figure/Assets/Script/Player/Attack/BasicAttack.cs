@@ -31,7 +31,7 @@ public class BasicAttack : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time > 3.0f)
+        if(time > 2.0f)
         {
             this.gameObject.SetActive(false);
         }

@@ -39,9 +39,10 @@
      <Compile Include="Assets\Script\Player\slotfunc\SecondaryFunc.cs" />
      <Compile Include="Assets\Script\Player\Attack\PlayerAttack.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\InteractionEvent.cs" />
-     <Compile Include="Assets\Script\Player\Player.cs" />
+     <Compile Include="Assets\Script\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Script\UI\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\Script\Player\PlayerInfo.cs" />
+     <Compile Include="Assets\Script\Enemy\EnemyInfo.cs" />
      <Compile Include="Assets\Script\Player\Attack\BasicAttack.cs" />
      <Compile Include="Assets\Script\UI\UIManager.cs" />
      <Compile Include="Assets\Script\UI\Slot\SlotInfo.cs" />
@@ -56,10 +57,12 @@
      <Compile Include="Assets\Script\UI\Slot\InitUiTransform.cs" />
      <Compile Include="Assets\Script\CameraInfo.cs" />
      <Compile Include="Assets\Script\Player\Repulser\RepulserControll.cs" />
+     <Compile Include="Assets\Script\Player\PlayerInteraction.cs" />
      <Compile Include="Assets\Script\Player\Repulser\Repulser.cs" />
      <Compile Include="Assets\Script\UI\Slot\SlotDropHandler.cs" />
      <Compile Include="Assets\Script\UI\Slot\IngameSlotView.cs" />
-     <Compile Include="Assets\Script\Enemy\EnemyInfo.cs" />
+     <Compile Include="Assets\Script\Enemy\EnemyInteraction.cs" />
+     <Compile Include="Assets\Script\Enemy\Enemy01.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -76,7 +76,7 @@ public class PlayerAttack: MonoBehaviour
     public void CheckRateTime() ////supreme slot 값마다 다른 공격 연사속도.
     {
         if(player.GetComponent<PlayerInfo>().sup_SlotState == 0)
-            attackRate = 0.5f;
+            attackRate = 0.2f;
     }
     void FireDelay()    //delay
     {
@@ -99,7 +99,7 @@ public class PlayerAttack: MonoBehaviour
 
     public void InitPool()  //supreme slot 값마다 다른 공격 오브젝트 재고.
     {
-        for(int i = 0; i < 30; i++)
+        for(int i = 0; i < 15; i++)
         {
             if(player.GetComponent<PlayerInfo>().sup_SlotState == 0)
             {
