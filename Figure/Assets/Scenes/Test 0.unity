@@ -225,6 +225,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &75902721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2036369614374831881, guid: c041c353094c7f04cba3ccecb6331839,
+    type: 3}
+  m_PrefabInstance: {fileID: 2079218382083951737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &75902725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75902721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6be159fdba2c44b43a92b137f9ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &263029652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815425391834527117, guid: c041c353094c7f04cba3ccecb6331839,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8840810018708231259, guid: c041c353094c7f04cba3ccecb6331839,
         type: 3}

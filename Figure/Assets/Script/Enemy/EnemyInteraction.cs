@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,8 +20,6 @@ public class EnemyInteraction : MonoBehaviour
             this.GetComponent<EnemyInfo>().hp = this.GetComponent<EnemyInfo>().hp - 1;
 
             collider.gameObject.SetActive(false);
-
-            Debug.Log("asd");
         }
     }
 

@@ -23,8 +23,8 @@ public class Repulser : MonoBehaviour
     {
         player.GetComponent<PlayerInfo>().Gauge = player.GetComponent<PlayerInfo>().Gauge - decelerationSpeed;
         
-        Debug.Log(decelerationSpeed);
-        Debug.Log(player.GetComponent<PlayerInfo>().Gauge);
+        //Debug.Log(decelerationSpeed);
+        //Debug.Log(player.GetComponent<PlayerInfo>().Gauge);
     }
 
     void BulletRemoval()

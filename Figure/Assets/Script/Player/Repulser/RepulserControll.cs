@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class RepulserControll : MonoBehaviour
 {
+    public GameObject player;
     public GameObject repulser;
 
+
+
+    void Awake() 
+    {
+        player = GameObject.Find("Player");
+    }
 
     void Update()
     {
@@ -15,24 +22,26 @@ public class RepulserControll : MonoBehaviour
 
     void Activate()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if(this.GetComponent<PlayerInfo>().Gauge > 10)
             {
+                player.GetComponent<PlayerInfo>().isRepulser = true;
                 repulser.SetActive(true);
             }
 
             else
             {
-                //적절한 제스쳐
+                //최소 게이지를 채우지 못하셨군요? 그렇다면 매우 유감이지만 쓸수 없습니다!
             }
         }
     }
 
     void Exac()
     {
-        if(Input.GetKeyUp(KeyCode.Q) || this.GetComponent<PlayerInfo>().Gauge <= 0)
+        if(Input.GetKeyUp(KeyCode.Space) || this.GetComponent<PlayerInfo>().Gauge <= 0)
         {
+            player.GetComponent<PlayerInfo>().isRepulser = false;
             repulser.SetActive(false);
         }
     }

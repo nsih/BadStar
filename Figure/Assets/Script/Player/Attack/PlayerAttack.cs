@@ -20,10 +20,10 @@ public class PlayerAttack: MonoBehaviour
     bool isShootable;
 
 
-    void Start()
+    void Awake()
     {
-        playerManager = GameObject.Find("PlayerManager");
         player = GameObject.Find("Player");
+        playerManager = GameObject.Find("PlayerManager");
         muzzle = GameObject.Find("Muzzle");
         bulletRotation = GameObject.Find("RrotatingBody");
 
@@ -42,9 +42,12 @@ public class PlayerAttack: MonoBehaviour
         CheckRateTime();    //공격 딜레이 시간 체크
         FireDelay();        //딜레이 실행
 
-        if (Input.GetMouseButtonDown(0) && isShootable == true)
+        if (Input.GetMouseButtonDown(0) && isShootable == true && 
+            player.GetComponent<PlayerInfo>().isRepulser == false)
         {
             ActivateProjectile();
+
+            Debug.Log(player.GetComponent<PlayerInfo>().isRepulser);
         }
         /*
         Debug.Log(isShootable);
