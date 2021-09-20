@@ -47,7 +47,7 @@ public class PlayerAttack: MonoBehaviour
         {
             ActivateProjectile();
 
-            Debug.Log(player.GetComponent<PlayerInfo>().isRepulser);
+            //Debug.Log(player.GetComponent<PlayerInfo>().isRepulser);
         }
         /*
         Debug.Log(isShootable);
